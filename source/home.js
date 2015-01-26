@@ -32,6 +32,10 @@ function showpage(app) {
             });
         });
     });
+
+    app.route('/a13989aa54a1.html').get(function (req, res, next) {
+                res.send("8719059de734");
+    });
 }
 
 module.exports = showpage;

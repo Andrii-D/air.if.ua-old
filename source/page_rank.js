@@ -1,7 +1,7 @@
 var BETA = 0.8; // 1-BETA - jump probability
 var BASE = 1; // sum(rank) = BASE
 var EPS = 0.000001;
-var TOP = 20;
+var TOP = 10;
 var env = process.env.NODE_ENV || 'development';
 var client = require('./utils/redis');
 var async = require('async');
@@ -165,6 +165,7 @@ module.exports = function(host, email){
 //                    sum += parseFloat(finals[i].score)
 //                }
 //                Logger.info("Sum = " + sum);
+                if (N < TOP) {TOP = N;}
                 var locals = {
                     finals: finals,
                     email: EMAIL,
