@@ -22,6 +22,7 @@ app.set('views', path.join(__dirname, 'source', 'static'));
 
 require('./source/signup')(app);
 require('./source/home')(app);
+require('./source/domains')(app);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 

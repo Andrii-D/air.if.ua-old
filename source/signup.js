@@ -9,7 +9,7 @@ var config = require('../config');
 var logger = require('./utils/logger');
 var client = require('./utils/redis');
 var url = require('url');
-var sendgrid  = require('sendgrid')('preck', 'NoOneCanHackThis');
+var sendgrid  = require('sendgrid')('seo_guru', 'MyLocalizelySendGrid13');
 
 function signup(app) {
 
