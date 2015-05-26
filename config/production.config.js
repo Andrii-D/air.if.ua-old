@@ -4,9 +4,9 @@ var config = {
 	},
 
 	seismo: {
-		app: 'likeastore-production',
+		app: 'airpair-production',
 		options: {
-			server: 'https://analytics.likeastore.com',
+			server: 'https://airpair.com',
 			credentials: {
 				username: process.env.SEISMO_USERNAME,
 				password: process.env.SEISMO_PASSWORD

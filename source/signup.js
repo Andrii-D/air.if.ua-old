@@ -2,12 +2,10 @@
  * Created by Dvoiak on 22.12.2014.
  */
 var _ = require('underscore');
-var crawl = require('./crawl.js');
 var moment = require('moment');
 
 var config = require('../config');
 var logger = require('./utils/logger');
-var client = require('./utils/redis');
 var url = require('url');
 var sendgrid  = require('sendgrid')('seo_guru', 'MyLocalizelySendGrid13');
 

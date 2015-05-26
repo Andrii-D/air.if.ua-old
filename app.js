@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 var env = process.env.NODE_ENV || 'development';
-if (env != 'development') require('newrelic');
 var port = process.env.PORT || 3006;
 var cors = require('cors');
 var serveStatic = require('serve-static');
@@ -22,11 +21,10 @@ app.set('views', path.join(__dirname, 'source', 'static'));
 
 require('./source/signup')(app);
 require('./source/home')(app);
-require('./source/domains')(app);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.listen(port, function () {
-	logger.info('Page Rank Checker ' + port + ' ' + env);
+	logger.info('AirPair ' + port + ' ' + env);
     if (env == 'development') logger.info("http://localhost:" + port)
 });

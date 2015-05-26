@@ -44,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Expired domains</a>
+            <a class="navbar-brand" href="#">Domains</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -57,21 +57,21 @@
 
 <div class="container">
 
-    <div class="starter-template" id="list">
-        <h1>Expired domains</h1>
+    <div class="starter-template" id="expiring">
+        <h1>Expiring domains</h1>
         <p class="lead">This domains are going to expire soon!</p>
         <span class="label label-info">Expires today</span>
         <span class="label label-warning">Expires in a few hours</span>
         <span class="label label-danger">Outdated information</span><br/><br/>
-        <% for(var i=0; i<domains.length; i++) {%>
-        <div class="btn-group" role="group" aria-label="<%= domains[i].domain %>">
-            <% if (domains[i].today) {%>
+        <% for(var i=0; i<expiring.length; i++) {%>
+        <div class="btn-group" role="group" aria-label="<%= expiring[i].domain %>">
+            <% if (expiring[i].today) {%>
             <button type="button" class="btn btn-default btn-info" style="width: 40px;">
             <%} else {%>
-                        <% if (domains[i].old) {%>
+                        <% if (expiring[i].old) {%>
                             <button type="button" class="btn btn-default btn-danger" style="width: 40px;">
                         <%} else {%>
-                            <% if (domains[i].coming) {%>
+                            <% if (expiring[i].coming) {%>
                                 <button type="button" class="btn btn-default btn-warning" style="width: 40px;">
                             <%} else {%>
                                  <button type="button" class="btn btn-default btn-default" style="width: 40px;">
@@ -79,9 +79,9 @@
                     <%}%>
 
             <%}%>
-                <%= domains[i].id %></button>
-            <button type="button" class="btn btn-default" style="width: 200px;"><a href="http://<%= domains[i].domain %>" target="_blank"><%= domains[i].domain %></a></button>
-            <button type="button" class="btn btn-default" style="width: 300px;"><%= domains[i].expires %></button>
+                <%= expiring[i].id %></button>
+            <button type="button" class="btn btn-default" style="width: 200px;"><a href="http://<%= expiring[i].domain %>" target="_blank"><%= expiring[i].domain %></a></button>
+            <button type="button" class="btn btn-default" style="width: 300px;"><%= expiring[i].expires %></button>
         </div><br/>
 
         <% } %>
@@ -90,8 +90,30 @@
         <h1>Add new domain</h1>
         <div class="input-group input-group-lg">
             <span class="input-group-addon" id="sizing-addon1">URL</span>
-            <input type="text" class="form-control" placeholder="http://google.com" aria-describedby="sizing-addon1" id="new_url">
+            <input type="text" class="form-control" placeholder="http://google.com" aria-describedby="sizing-addon1" id="new_url" value="http://">
         </div>
+    </div>
+    <div class="starter-template" id="expired">
+        <h1>Expired domains</h1>
+        <% for(var i=0; i<expired.length; i++) {%>
+        <div class="btn-group" role="group" aria-label="<%= expired[i] %>">
+            <button type="button" class="btn btn-default" style="width: 40px;"><%= i %></button>
+            <button type="button" class="btn btn-default" style="width: 300px;"><%= expired[i] %></button>
+            <button type="button" class="btn btn-default" style="width: 50px;">PR</button>
+        </div>
+        <% } %>
+    </div>
+    <div class="starter-template" id="banned">
+        <h1>Banned domains</h1>
+
+        <% for(var i=0; i<banned.length; i++) {%>
+        <div class="btn-group" role="group" aria-label="<%= banned[i] %>">
+            <button type="button" class="btn btn-default" style="width: 40px;"><%= i %></button>
+            <button type="button" class="btn btn-default" style="width: 300px;"><%= banned[i] %></button>
+        </div>
+        <% } %>
+
+
     </div>
 
 </div><!-- /.container -->
@@ -107,14 +129,14 @@
         $("ul.navbar-nav li").click(function(){
             $("ul.navbar-nav li").removeClass('active');
             $(this).addClass('active');
-            $("#list").toggle();
+            $("#expiring").toggle();
             $("#sendbox").toggle();
         });
         $("#new_url").keypress(function(e) {
             if(e.which == 13) {
                 if (!!$(this).val()){
                     $.post( "domains/api",{url: $(this).val()});
-                    $(this).val('');
+//                    $(this).val('');
                 }
             }
         });

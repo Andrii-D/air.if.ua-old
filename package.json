@@ -1,7 +1,7 @@
 {
   "name": "tracker",
   "version": "0.0.2",
-  "description": "Track user clicks to links",
+  "description": "local_business_site",
   "main": "app.js",
   "private": true,
   "dependencies": {
@@ -33,7 +33,7 @@
     "links",
     "api"
   ],
-  "author": "alexander.beletsky@gmail.com",
+  "author": "dvoyak@gmail.com",
   "engines": {
     "node": "0.10.x"
   },
