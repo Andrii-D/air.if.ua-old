@@ -8,11 +8,14 @@ var PAYPAL_ENDPOINT = process.env.PAYPAL_ENDPOINT|| 'https://www.paypal.com/cgi-
 var url = require('url');
 
 function showpage(app) {
-    app.route('/').get(function (req, res, next) {
-        res.sendfile(__dirname + '/static/index.html');
-    });
-    app.route('/advanced').get(function (req, res, next) {
-        res.render('advanced', { PAYPAL_BUSINESS: PAYPAL_BUSINESS, PAYPAL_ENDPOINT: PAYPAL_ENDPOINT });
+//    app.route('/').get(function (req, res, next) {
+//        res.sendfile(__dirname + '/static/index.html');
+//    });
+//    app.route('/advanced').get(function (req, res, next) {
+//        res.render('advanced', { PAYPAL_BUSINESS: PAYPAL_BUSINESS, PAYPAL_ENDPOINT: PAYPAL_ENDPOINT });
+//    });
+    app.get('/', function(req, res) {
+        res.render('pages/index', { title: 'The index page!' })
     });
     var finals = [{url:"http://preply.com", score: "0.009"},
         {url:"http://preply.com", score: "0.009"},
