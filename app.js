@@ -31,7 +31,15 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
     res.render('pages/index');
 });
-
+app.get('/service', function(req, res) {
+    res.render('pages/service');
+});
+app.get('/pre-set', function(req, res) {
+    res.render('pages/pre-set');
+});
+app.get('/contacts', function(req, res) {
+    res.render('pages/contact');
+});
 app.listen(port, function () {
 	logger.info('AirPair ' + port + ' ' + env);
     if (env == 'development') logger.info("http://localhost:" + port)
