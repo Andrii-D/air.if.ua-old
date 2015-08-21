@@ -40,6 +40,19 @@ app.get('/pre-set', function(req, res) {
 app.get('/contacts', function(req, res) {
     res.render('pages/contact');
 });
+
+app.get('/locations.kml', function(req, res) {
+    res.render('locations');
+});
+
+app.get('/robots.txt', function(req, res) {
+    res.render('robots');
+});
+
+app.get('/sitemap.xml', function(req, res) {
+    res.render('sitemap');
+});
+
 app.listen(port, function () {
 	logger.info('AirPair ' + port + ' ' + env);
     if (env == 'development') logger.info("http://localhost:" + port)
