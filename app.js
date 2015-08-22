@@ -53,6 +53,10 @@ app.get('/sitemap.xml', function(req, res) {
     res.render('sitemap');
 });
 
+app.get('/geositemap.xml', function(req, res) {
+    res.render('geositemap');
+});
+
 app.listen(port, function () {
 	logger.info('AirPair ' + port + ' ' + env);
     if (env == 'development') logger.info("http://localhost:" + port)
