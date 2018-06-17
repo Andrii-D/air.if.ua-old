@@ -37,7 +37,7 @@
   ],
   "author": "dvoyak@gmail.com",
   "engines": {
-    "node": "0.10.x"
+    "node": "6.x"
   },
   "license": "MIT"
 }
