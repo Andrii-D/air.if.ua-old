@@ -23,8 +23,14 @@
     "underscore": "~1.6.0"
   },
   "devDependencies": {
+    "amphtml-validator": "^1.0.18",
     "expect.js": "~0.3.1",
-    "mocha": "^5.2.0"
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.2.2",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-purifycss": "^0.2.0",
+    "mocha": "^5.2.0",
+    "purifycss": "^1.1.9"
   },
   "scripts": {
     "test": "node test/runner.js",
