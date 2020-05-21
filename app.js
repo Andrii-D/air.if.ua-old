@@ -29,20 +29,20 @@ app.set('view engine', 'ejs');
 
 // index page
 app.get('/', function(req, res) {
-    res.render('pages/index');
+    res.redirect('https://air.if.ua/montazh-kondycioneriv.html')
 });
 app.get('/service', function(req, res) {
-    res.render('pages/service');
+    res.redirect('https://air.if.ua/remont-kondycioneriv.html')
 });
 app.get('/pre-set', function(req, res) {
-    res.render('pages/pre-set');
+    res.redirect('https://air.if.ua/montazh-kondycioneriv.html')
 });
 app.get('/contacts', function(req, res) {
-    res.render('pages/contact');
+    res.redirect('https://air.if.ua')
 });
 
 app.get('/locations.kml', function(req, res) {
-    res.render('locations');
+    res.redirect('https://air.if.ua/locations.kml')
 });
 
 app.get('/robots.txt', function(req, res) {
@@ -50,11 +50,12 @@ app.get('/robots.txt', function(req, res) {
 });
 
 app.get('/sitemap.xml', function(req, res) {
-    res.render('sitemap');
+    
+    res.redirect('https://air.if.ua/sitemap.xml')
 });
 
 app.get('/geositemap.xml', function(req, res) {
-    res.render('geositemap');
+    res.redirect('https://air.if.ua/geositemap.xml')
 });
 
 app.listen(port, function () {
