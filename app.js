@@ -29,7 +29,7 @@ app.set('view engine', 'ejs');
 
 // index page
 app.get('/', function(req, res) {
-    res.redirect('https://air.if.ua/montazh-kondycioneriv.html')
+    res.redirect('https://air.if.ua')
 });
 app.get('/service', function(req, res) {
     res.redirect('https://air.if.ua/remont-kondycioneriv.html')
@@ -46,7 +46,7 @@ app.get('/locations.kml', function(req, res) {
 });
 
 app.get('/robots.txt', function(req, res) {
-    res.render('robots');
+    res.redirect('https://air.if.ua/robots.txt')
 });
 
 app.get('/sitemap.xml', function(req, res) {
