@@ -20,7 +20,7 @@
     "respawn": "^0.4.2",
     "seismo-client": "0.0.5",
     "serve-static": "^1.13.2",
-    "underscore": "~1.6.0"
+    "underscore": "~1.12.1"
   },
   "devDependencies": {
     "amphtml-validator": "^1.0.18",
