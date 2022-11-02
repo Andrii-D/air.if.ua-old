@@ -25,7 +25,7 @@
   "devDependencies": {
     "amphtml-validator": "^1.0.18",
     "expect.js": "~0.3.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^2.2.2",
     "gulp-html-replace": "^1.6.2",
     "gulp-purifycss": "^0.2.0",
